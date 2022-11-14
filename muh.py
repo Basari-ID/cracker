@@ -1,8 +1,9 @@
 #         Author  : Muhammad Basari
-#         Fb          : fb.me/basari.shp
-#         Wa         : +628976622679
+#         Fb      : fb.me/basari.shp
+#         Wa      : +628976622679
 
-# Recode Aja Bang Tapi Ngasih Bintang Dulu Lah #
+# Recode Aja Bang #
+# Ngasih Bintang Dulu #
 
 #-----------------[ MEGIMPORT SI MODULE ]-------------------
 import requests,bs4,json,os,sys,random,datetime,time,re
