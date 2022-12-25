@@ -315,7 +315,7 @@ def menu(bas_id):
 	except IOError:
 		print('[×] Expired Cookies ')
 		time.sleep(5)
-		login_lagi334()
+		login_bas()
 	os.system('clear')
 	banner()
 	ip = requests.get("https://api.ipify.org").text
