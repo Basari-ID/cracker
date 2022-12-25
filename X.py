@@ -262,26 +262,26 @@ jalan(f'({H}+{P})simple crak')
 #--------------------[ BAGIAN-MASUK ]--------------
 
 #--------------------[ MASUK ]--------------#
+#
 def login():
 	try:
-		token = open('token.txt','r').read()
-		cok = open('cok.txt','r').read()
+		token = open('.token.txt','r').read()
+		cok = open('.cok.txt','r').read()
 		tokenku.append(token)
 		try:
-			sy = requests.get('https://graph.facebook.com/me?fields=id,name&access_token='+tokenku[0], cookies={'cookie':cok})
-			sy2 = json.loads(sy.text)['name']
-			sy3 = json.loads(sy.text)['id']
-			menu(sy2,sy3)
+			basariheker = requests.get('https://graph.facebook.com/me?fields=id,name&access_token='+tokenku[0], cookies={'cookie':cok})
+			basganteng = json.loads(basariheker.text)['id']
+			menu(basganteng)
 		except KeyError:
-			login_lagi334()
+			login_bas()
 		except requests.exceptions.ConnectionError:
-			li = ' PROBLEM INTERNET CONNECTION, CHECK AND TRY AGAIN '
-			lo = mark(li, style='red')
-			sol().print(lo, style='cyan')
+			basari_tamvan(f'{bas}[!] JARINGAN EROR BRO COBA LAGI !{x}')
 			exit()
 	except IOError:
-		login_lagi334()
-def login_lagi334():
+		login_bas()
+
+#
+def login_bas():
 	try:
 		os.system('clear')
 		banner()
@@ -308,7 +308,7 @@ def login_lagi334():
 		print(f'{b}========================================{x}')
 		exit()
 #------------------[ BAGIAN-MENU ]----------------#
-def menu(my_name,my_id):
+def menu(bas_id):
 	try:
 		token = open('token.txt','r').read()
 		cok = open('cok.txt','r').read()
