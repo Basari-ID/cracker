@@ -1,4 +1,4 @@
-# free sc Cuy
+# 
 
 $ pkg update && pkg upgrade
 
@@ -22,4 +22,4 @@ $ git clone https://github.com/Basari-ID/cracker
 
 $ cd cracker
 
-$ python mon.py
+$ python sonew.py
